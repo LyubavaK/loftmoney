@@ -11,8 +11,5 @@ public class AddItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-
-        int costId = getIntent().getIntExtra("COST_ID", 0);
-        Log.e("TAG", "Cost id = " + costId);
     }
 }

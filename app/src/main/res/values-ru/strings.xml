@@ -4,4 +4,12 @@
     <string name="title">Название</string>
     <string name="expense">Расход</string>
     <string name="add"> Добавить</string>
+    <string name="expenses">расходы</string>
+    <string name="incomes">доходы</string>
+    <string name="balance">Баланс</string>
+    <array name="main_pager_titles">
+        <item>@string/expenses</item>
+        <item>@string/incomes</item>
+        <item>@string/balance</item>
+    </array>
 </resources>

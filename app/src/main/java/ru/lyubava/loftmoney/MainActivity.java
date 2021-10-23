@@ -1,7 +1,6 @@
 package ru.lyubava.loftmoney;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnClick).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newActivity = new Intent(getApplicationContext(), AddItemActivity.class);
-                newActivity.putExtra("COST_ID", 1);
+                Intent newActivity = new Intent(getApplicationContext(), ItemActivity.class);
                 startActivity(newActivity);
             }
         });
