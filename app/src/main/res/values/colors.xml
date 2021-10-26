@@ -7,4 +7,8 @@
     <color name="expenseColor">#4A90E2</color>
     <color name="incomeColor">#7ED321</color>
     <color name="dividerColor">#F2F2F2</color>
+    <color name="action_button">#FF9E57</color>
+    <color name="call_item_activity_button">#ffc107</color>
+    <color name="call_item_activity_button_color">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
 </resources>
