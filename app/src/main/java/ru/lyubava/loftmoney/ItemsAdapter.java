@@ -1,23 +1,27 @@
 package ru.lyubava.loftmoney;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.Collections;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHolder> {
 
-    private List<Item> items = Collections.emptyList();
+    private List<Item> items = new ArrayList<>();
+    private int currentPosition;
 
-    @SuppressLint("NotifyDataSetChanged")
-    public void setItems(List<Item> items) {
+    public void setItems(List<Item> items, int position) {
+        this.items.clear();
         this.items = items;
+        currentPosition = position;
         notifyDataSetChanged();
     }
 
@@ -38,7 +42,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder itemViewHolder, int position) {
         Item item = items.get(position);
-        itemViewHolder.bind(item);
+        itemViewHolder.bind(item, currentPosition);
     }
 
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -53,9 +57,14 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemViewHold
             price = itemView.findViewById(R.id.price);
         }
 
-        public void bind(Item item){
+        public void bind(Item item, int currentPosition){
             name.setText(item.getName());
             price.setText(item.getPrice());
+            if (currentPosition == 0) {
+                price.setTextColor(Color.parseColor("#4A90E2"));
+            } else {
+                price.setTextColor(Color.parseColor("#7ED321"));
+            }
         }
     }
 }
